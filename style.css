@@ -1,0 +1,256 @@
+/* ==========================================================
+   1. VARIÁVEIS (é aqui que você personaliza cores e medidas)
+   ========================================================== */
+:root {
+  /* Cores */
+  --marinho: #0B1F3A;      /* cor principal */
+  --marinho-2: #14315C;    /* variação mais clara */
+  --destaque: #FF5A1F;     /* cor de destaque (laranja). Alternativa: #2D6BFF (azul elétrico) */
+  --branco: #FFFFFF;
+  --cinza: #EEF1F5;
+  --linha: #CBD3DF;
+  --texto: #0B1F3A;
+  --texto-suave: #4A5568;
+  --texto-claro: #C9D3E3;  /* texto sobre fundo escuro */
+  --rodape: #07142A;
+
+  /* Tipografia (fontes do sistema: não dependem de internet) */
+  --fonte: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+
+  /* Espaçamentos e larguras */
+  --max: 72rem;
+  --gutter: 1.25rem;
+  --esp-s: 1rem;
+  --esp-m: 2rem;
+  --esp-l: 4rem;
+  --esp-xl: 6rem;
+
+  /* Cor do contorno de foco (muda nas seções escuras) */
+  --foco: var(--marinho);
+}
+
+/* ==========================================================
+   2. BASE
+   ========================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body {
+  margin: 0; font-family: var(--fonte); font-size: 1.0625rem; line-height: 1.65;
+  color: var(--texto); background: var(--branco); overflow-x: clip;
+}
+h1, h2, h3 { font-weight: 800; letter-spacing: -0.025em; line-height: 1.08; margin: 0 0 var(--esp-s); overflow-wrap: break-word; }
+h1 { font-size: clamp(2.5rem, 9vw, 5.25rem); letter-spacing: -0.035em; line-height: 1.02; }
+h2 { font-size: clamp(1.9rem, 5vw, 3.2rem); }
+h3 { font-size: 1.3rem; letter-spacing: -0.01em; }
+p { margin: 0 0 var(--esp-s); }
+a { color: inherit; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+img, svg { display: block; max-width: 100%; height: auto; }
+
+:focus-visible { outline: 3px solid var(--foco); outline-offset: 3px; }
+.hero, .diferenciais, .cta-final, .site-footer { --foco: var(--destaque); }
+.destaque-sec { --foco: var(--marinho); }
+
+.container { width: min(100% - (var(--gutter) * 2), var(--max)); margin-inline: auto; }
+.section { padding: var(--esp-l) 0; }
+.cinza { background: var(--cinza); }
+.ph { width: 100%; height: auto; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip-link { position: absolute; left: -999px; top: 0; background: var(--marinho); color: #fff; padding: .7rem 1rem; z-index: 200; }
+.skip-link:focus { left: 0; }
+
+.eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .8rem; font-weight: 700; color: var(--texto-claro); margin-bottom: var(--esp-s); }
+.eyebrow-escuro { color: var(--marinho); }
+
+/* ==========================================================
+   3. BOTÕES
+   ========================================================== */
+.btn {
+  display: inline-block; padding: .95rem 1.5rem; font-weight: 700; text-decoration: none;
+  border: 2px solid transparent; text-align: center; transition: background-color .15s, color .15s;
+}
+.btn-grande { padding: 1.1rem 1.8rem; font-size: 1.05rem; }
+.btn-destaque { background: var(--destaque); color: var(--marinho); }   /* texto marinho = contraste bom */
+.btn-destaque:hover { background: var(--branco); }
+.btn-contorno { border-color: var(--branco); color: var(--branco); }
+.btn-contorno:hover { background: var(--branco); color: var(--marinho); }
+.btn-escuro { background: var(--marinho); color: var(--branco); }
+.btn-escuro:hover { background: var(--marinho-2); }
+
+/* ==========================================================
+   4. AVISO DEMO E CABEÇALHO
+   ========================================================== */
+.demo-banner { margin: 0; background: var(--cinza); color: var(--marinho); text-align: center; font-size: .85rem; padding: .45rem 1rem; border-bottom: 1px solid var(--linha); }
+
+.site-header { position: sticky; top: 0; z-index: 100; background: var(--branco); border-bottom: 1px solid var(--linha); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; padding: .8rem 0; }
+
+.brand { display: flex; align-items: center; gap: .8rem; text-decoration: none; }
+.brand-mark { width: 1.75rem; height: 1.75rem; background: var(--marinho); position: relative; flex: none; }
+.brand-mark::after { content: ""; position: absolute; right: -.35rem; bottom: -.35rem; width: .85rem; height: .85rem; background: var(--destaque); }
+.brand-text { font-weight: 800; letter-spacing: .08em; line-height: 1.1; }
+.brand-text small { display: block; font-weight: 500; letter-spacing: 0; font-size: .75rem; color: var(--texto-suave); }
+
+.nav-list { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+.nav-list a:not(.btn) { text-decoration: none; font-weight: 600; font-size: .95rem; padding: .4rem 0; border-bottom: 3px solid transparent; }
+.nav-list a:not(.btn):hover { border-color: var(--destaque); }
+.nav-cta { display: none; }
+
+.menu-toggle { display: none; background: none; border: 2px solid var(--marinho); color: var(--marinho); font: inherit; font-weight: 700; padding: .5rem 1rem; cursor: pointer; }
+
+/* Telas pequenas: menu vira painel. Só se o JavaScript carregou (classe "js"). */
+@media (max-width: 59.99rem) {
+  .header-cta { display: none; }
+  .nav-cta { display: block; }
+  .js .menu-toggle { display: block; }
+  .js .nav-list {
+    display: none; position: absolute; left: 0; right: 0; top: 100%;
+    flex-direction: column; gap: 0; background: var(--branco);
+    padding: .5rem var(--gutter) 1.25rem; border-bottom: 1px solid var(--linha);
+  }
+  .js .nav-list.aberto { display: flex; }
+  .js .nav-list a:not(.btn) { display: block; padding: .9rem 0; border-bottom: 1px solid var(--cinza); }
+  .js .nav-cta { margin-top: 1rem; }
+  .js .nav-cta .btn { display: block; }
+}
+
+/* ==========================================================
+   5. HERO
+   ========================================================== */
+.hero { background: var(--marinho); color: var(--branco); padding: var(--esp-l) 0 0; }
+.hero-grid { display: grid; gap: var(--esp-m); align-items: end; }
+.hero-texto { padding-bottom: var(--esp-m); }
+.realce { color: var(--destaque); }
+.lead { font-size: 1.15rem; color: var(--texto-claro); max-width: 34rem; margin-bottom: var(--esp-m); }
+.botoes { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+.hero-fig { position: relative; z-index: 2; margin: 0 0 -3rem; max-width: 28rem; }
+.hero-fig::before { content: ""; position: absolute; z-index: -1; right: -.9rem; bottom: -.9rem; width: 55%; height: 55%; background: var(--destaque); }
+
+#sobre { padding-top: calc(var(--esp-l) + 3rem); }
+
+@media (min-width: 60rem) {
+  .hero { padding-top: var(--esp-xl); }
+  .hero-grid { grid-template-columns: 1.15fr .85fr; gap: var(--esp-l); }
+  .hero-texto { padding-bottom: var(--esp-xl); }
+  .hero-fig { margin-bottom: -6rem; max-width: none; }
+  #sobre { padding-top: calc(var(--esp-xl) + 3rem); }
+}
+
+/* ==========================================================
+   6. SOBRE
+   ========================================================== */
+.sobre-grid { display: grid; gap: var(--esp-l) var(--esp-l); align-items: center; }
+.sobre-fig { margin: 0; position: relative; }
+.sobre-fig::before { content: ""; position: absolute; z-index: -1; left: -.9rem; top: -.9rem; width: 40%; height: 40%; background: var(--marinho); }
+.sobre-fig { z-index: 0; isolation: isolate; }
+.sobre-texto p { color: var(--texto-suave); max-width: 38rem; }
+.dados { margin: var(--esp-m) 0 0; border-top: 3px solid var(--marinho); }
+.dados div { display: grid; gap: .1rem; padding: .9rem 0; border-bottom: 1px solid var(--linha); }
+.dados dt { font-weight: 700; }
+.dados dd { margin: 0; color: var(--texto-suave); }
+@media (min-width: 48rem) {
+  .sobre-grid { grid-template-columns: 1fr 1fr; }
+  .dados div { grid-template-columns: 11rem 1fr; gap: 1rem; }
+}
+
+/* ==========================================================
+   7. SERVIÇOS (a grade se ajusta sozinha ao número de itens)
+   ========================================================== */
+.cabecalho-secao { display: grid; gap: var(--esp-s); align-items: end; }
+.cabecalho-secao p { color: var(--texto-suave); max-width: 30rem; margin: 0; }
+@media (min-width: 48rem) { .cabecalho-secao { grid-template-columns: 1fr 1fr; } }
+
+.servicos { display: grid; gap: 1.25rem; margin-top: var(--esp-m); grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
+.servico { background: var(--branco); border-top: 5px solid var(--marinho); padding: 1.75rem; display: flex; flex-direction: column; gap: .5rem; }
+.servico p { color: var(--texto-suave); flex: 1; }
+.servico.em-destaque { background: var(--marinho); color: var(--branco); border-top-color: var(--destaque); --foco: var(--destaque); }
+.servico.em-destaque p { color: var(--texto-claro); }
+.link-seta { font-weight: 700; text-decoration: none; border-bottom: 2px solid currentColor; align-self: flex-start; }
+.link-seta::after { content: " →"; }
+.link-seta:hover { border-bottom-color: var(--destaque); }
+
+/* ==========================================================
+   8. DIFERENCIAIS
+   ========================================================== */
+.diferenciais { background: var(--marinho); color: var(--branco); }
+.lista-dif { margin-top: var(--esp-m); }
+.lista-dif li { display: grid; grid-template-columns: 3.5rem 1fr; gap: .25rem 1rem; padding: 1.75rem 0; border-top: 1px solid rgba(255,255,255,.28); }
+.lista-dif li:last-child { border-bottom: 1px solid rgba(255,255,255,.28); }
+.dif-num { grid-row: span 2; font-size: 2rem; font-weight: 800; color: var(--destaque); line-height: 1; }
+.lista-dif h3 { margin: 0; }
+.lista-dif p { margin: 0; color: var(--texto-claro); grid-column: 2; }
+@media (min-width: 48rem) {
+  .lista-dif li { grid-template-columns: 6rem 1fr 1.4fr; align-items: start; gap: 1rem 2rem; }
+  .dif-num { grid-row: auto; font-size: 2.5rem; }
+  .lista-dif p { grid-column: auto; }
+}
+
+/* ==========================================================
+   9. SEÇÃO DE DESTAQUE
+   ========================================================== */
+.destaque-sec { background: var(--destaque); color: var(--marinho); }
+.destaque-grid { display: grid; gap: var(--esp-m); align-items: center; }
+.destaque-fig { margin: 0; }
+.destaque-texto p { font-size: 1.1rem; max-width: 34rem; margin-bottom: var(--esp-m); }
+@media (min-width: 48rem) { .destaque-grid { grid-template-columns: 1fr 1fr; gap: var(--esp-l); } }
+
+/* ==========================================================
+   10. COMO FUNCIONA
+   ========================================================== */
+.etapas { display: grid; gap: 1.5rem; margin-top: var(--esp-m); counter-reset: etapa; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); }
+.etapas li { counter-increment: etapa; border-top: 6px solid var(--marinho); padding-top: 1rem; }
+.etapas li::before { content: counter(etapa, decimal-leading-zero); display: block; font-size: 2.2rem; font-weight: 800; line-height: 1; margin-bottom: .6rem; }
+.etapas p { color: var(--texto-suave); margin: 0; }
+
+/* ==========================================================
+   11. FAQ
+   ========================================================== */
+.faq-grid { display: grid; gap: var(--esp-m); }
+@media (min-width: 60rem) { .faq-grid { grid-template-columns: 1fr 1.6fr; gap: var(--esp-l); } }
+details { background: var(--branco); border-top: 4px solid var(--marinho); margin-bottom: .75rem; }
+summary { cursor: pointer; font-weight: 700; padding: 1.1rem 3.5rem 1.1rem 1.25rem; position: relative; list-style: none; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 1.6rem; line-height: 1; }
+details[open] summary::after { content: "−"; }
+details p { margin: 0; padding: 0 1.25rem 1.25rem; color: var(--texto-suave); }
+
+/* ==========================================================
+   12. CTA FINAL
+   ========================================================== */
+.cta-final { background: var(--marinho); color: var(--branco); padding: var(--esp-xl) 0; }
+.cta-bloco { border-left: .6rem solid var(--destaque); padding-left: 1.5rem; max-width: 46rem; }
+.cta-bloco h2 { font-size: clamp(2rem, 6vw, 3.8rem); }
+.cta-bloco p { color: var(--texto-claro); font-size: 1.15rem; margin-bottom: var(--esp-m); }
+
+/* Aviso do WhatsApp: fica na tela, invisível até ser usado */
+.aviso:not(.visivel) { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.aviso.visivel {
+  position: fixed; left: var(--gutter); right: var(--gutter); bottom: 1rem; z-index: 300;
+  max-width: 32rem; margin: 0 auto; padding: 1rem 1.25rem;
+  background: var(--marinho); color: var(--branco); border-left: 6px solid var(--destaque);
+}
+
+/* ==========================================================
+   13. RODAPÉ
+   ========================================================== */
+.site-footer { background: var(--rodape); color: var(--texto-claro); padding: var(--esp-l) 0 var(--esp-m); font-size: .95rem; }
+.footer-grid { display: grid; gap: var(--esp-m); grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); }
+.footer-marca { color: var(--branco); font-weight: 800; letter-spacing: .1em; font-size: 1.2rem; }
+.footer-titulo { font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--branco); margin-bottom: .8rem; }
+.site-footer li { margin-bottom: .4rem; }
+.site-footer a { color: var(--branco); }
+.footer-base { margin-top: var(--esp-m); padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,.2); font-size: .85rem; }
+.footer-base p { margin: 0; }
+
+/* ==========================================================
+   14. ACESSIBILIDADE: menos movimento
+   ========================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

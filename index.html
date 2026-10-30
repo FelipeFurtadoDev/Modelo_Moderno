@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- PERSONALIZE: título e descrição (aparecem na aba e no Google) -->
+  <title>Norte · Modelo demonstrativo de site institucional</title>
+  <meta name="description" content="Modelo demonstrativo de site institucional para pequenos e médios negócios. Todo o conteúdo entre colchetes é um espaço reservado.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0B1F3A">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <p class="demo-banner">Modelo demonstrativo: empresa e informações fictícias. Nada aqui é real.</p>
+
+  <!-- ================= CABEÇALHO ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- PERSONALIZE: nome e descritor. Para usar um logotipo em imagem,
+           troque o <span class="brand-mark"> por:
+           <img src="img/logo.svg" alt="" width="40" height="40"> -->
+      <a class="brand" href="#inicio" aria-label="Norte, ir para o início">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">NORTE<small>[Descritor do negócio]</small></span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
+
+      <nav aria-label="Principal">
+        <ul id="menu-principal" class="nav-list">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li class="nav-cta"><a class="btn btn-destaque" href="#contato" data-whatsapp>Pedir orçamento</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn-destaque header-cta" href="#contato" data-whatsapp>Pedir orçamento</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ================= HERO ================= -->
+    <section id="inicio" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-texto">
+          <p class="eyebrow">[Segmento] · [Cidade/UF]</p>
+          <!-- PERSONALIZE: frase principal. Dica: diga o que você resolve, para quem, em uma linha. -->
+          <h1>O que o seu negócio resolve, dito <span class="realce">sem rodeios.</span></h1>
+          <p class="lead">Texto de apoio em até duas frases: para quem é o serviço, o que a pessoa recebe e qual é o próximo passo. Substitua pelo texto real.</p>
+          <div class="botoes">
+            <a class="btn btn-destaque btn-grande" href="#contato" data-whatsapp>Pedir orçamento</a>
+            <a class="btn btn-contorno btn-grande" href="#servicos">Conhecer os serviços</a>
+          </div>
+        </div>
+
+        <figure class="hero-fig">
+          <!-- PERSONALIZE: imagem de destaque (proporção 4:5, ex.: 800 x 1000 px).
+               Para usar foto própria e autorizada, apague o <svg> e coloque:
+               <img src="img/hero.jpg" alt="Descreva a foto" width="800" height="1000" fetchpriority="high">
+               Salve na pasta "img" (JPG ou WebP, ideal abaixo de 200 KB). -->
+          <svg class="ph" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-label="Espaço reservado para foto principal do negócio">
+            <rect width="800" height="1000" fill="#14315C"/>
+            <rect x="0" y="560" width="800" height="440" fill="#1E4175"/>
+            <circle cx="560" cy="330" r="190" fill="#2B5A9E"/>
+            <rect x="80" y="120" width="200" height="200" fill="#0B1F3A"/>
+            <rect x="80" y="760" width="120" height="24" fill="#FF5A1F"/>
+            <text x="80" y="860" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="30" font-weight="700">Foto principal</text>
+            <text x="80" y="900" fill="#C9D3E3" font-family="Arial, sans-serif" font-size="24">Substituir · 800 × 1000 px</text>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= APRESENTAÇÃO ================= -->
+    <section id="sobre" class="section sobre">
+      <div class="container sobre-grid">
+        <figure class="sobre-fig">
+          <!-- PERSONALIZE: imagem (800 x 600 px). Troque por <img ... loading="lazy"> -->
+          <svg class="ph" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Espaço reservado para foto da empresa, equipe ou ambiente">
+            <rect width="800" height="600" fill="#D5DCE8"/>
+            <rect x="0" y="360" width="800" height="240" fill="#B8C4D8"/>
+            <rect x="500" y="80" width="220" height="220" fill="#0B1F3A"/>
+            <circle cx="220" cy="230" r="110" fill="#8FA3C2"/>
+            <rect x="60" y="500" width="100" height="20" fill="#FF5A1F"/>
+            <text x="60" y="560" fill="#0B1F3A" font-family="Arial, sans-serif" font-size="24" font-weight="700">Foto da empresa · 800 × 600 px</text>
+          </svg>
+        </figure>
+
+        <div class="sobre-texto">
+          <p class="eyebrow eyebrow-escuro">Sobre</p>
+          <h2>[Título institucional: quem somos em poucas palavras]</h2>
+          <p>[Parágrafo 1: conte quem é a empresa e o que ela oferece. Use apenas informações verdadeiras e que você possa comprovar.]</p>
+          <p>[Parágrafo 2: explique como o trabalho é feito e o que o cliente pode esperar do atendimento.]</p>
+          <dl class="dados">
+            <div><dt>Segmento</dt><dd>[Segmento de atuação]</dd></div>
+            <div><dt>Onde atendemos</dt><dd>[Cidade, região ou modalidade]</dd></div>
+            <div><dt>Como atendemos</dt><dd>[Presencial, on-line, visita, retirada...]</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVIÇOS =================
+         Para adicionar um item, copie um <li class="servico"> inteiro.
+         Para remover, apague o <li>. A grade se ajusta sozinha. -->
+    <section id="servicos" class="section cinza">
+      <div class="container">
+        <div class="cabecalho-secao">
+          <h2>Serviços</h2>
+          <p>[Frase curta apresentando as categorias de serviços, produtos ou especialidades.]</p>
+        </div>
+
+        <ul class="servicos">
+          <li class="servico em-destaque">
+            <!-- IMAGEM OPCIONAL: coloque aqui <img src="img/servico1.jpg" alt="..." width="600" height="400" loading="lazy"> -->
+            <h3>[Serviço ou produto 1]</h3>
+            <p>[Descrição curta, em uma ou duas frases. O primeiro item aparece em destaque.]</p>
+            <a class="link-seta" href="#contato" data-whatsapp>Solicitar informações<span class="sr-only"> sobre o serviço 1</span></a>
+          </li>
+          <li class="servico">
+            <h3>[Serviço ou produto 2]</h3>
+            <p>[Descrição curta do serviço, produto ou categoria.]</p>
+            <a class="link-seta" href="#contato" data-whatsapp>Solicitar informações<span class="sr-only"> sobre o serviço 2</span></a>
+          </li>
+          <li class="servico">
+            <h3>[Serviço ou produto 3]</h3>
+            <p>[Descrição curta do serviço, produto ou categoria.]</p>
+            <a class="link-seta" href="#contato" data-whatsapp>Solicitar informações<span class="sr-only"> sobre o serviço 3</span></a>
+          </li>
+          <li class="servico">
+            <h3>[Serviço ou produto 4]</h3>
+            <p>[Descrição curta do serviço, produto ou categoria.]</p>
+            <a class="link-seta" href="#contato" data-whatsapp>Solicitar informações<span class="sr-only"> sobre o serviço 4</span></a>
+          </li>
+          <li class="servico">
+            <h3>[Serviço ou produto 5]</h3>
+            <p>[Descrição curta do serviço, produto ou categoria.]</p>
+            <a class="link-seta" href="#contato" data-whatsapp>Solicitar informações<span class="sr-only"> sobre o serviço 5</span></a>
+          </li>
+          <li class="servico">
+            <h3>[Serviço ou produto 6]</h3>
+            <p>[Descrição curta do serviço, produto ou categoria.]</p>
+            <a class="link-seta" href="#contato" data-whatsapp>Solicitar informações<span class="sr-only"> sobre o serviço 6</span></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= DIFERENCIAIS =================
+         Use de 3 a 4 itens. Escreva só o que for verdadeiro e comprovável. -->
+    <section id="diferenciais" class="section diferenciais">
+      <div class="container">
+        <h2>Por que escolher a [Nome da empresa]</h2>
+        <ol class="lista-dif">
+          <li>
+            <span class="dif-num" aria-hidden="true">01</span>
+            <h3>[Diferencial 1]</h3>
+            <p>Descreva em uma ou duas frases por que isso importa para o cliente. Não inclua números, certificações ou garantias que você não possa comprovar.</p>
+          </li>
+          <li>
+            <span class="dif-num" aria-hidden="true">02</span>
+            <h3>[Diferencial 2]</h3>
+            <p>Descreva em uma ou duas frases por que isso importa para o cliente.</p>
+          </li>
+          <li>
+            <span class="dif-num" aria-hidden="true">03</span>
+            <h3>[Diferencial 3]</h3>
+            <p>Descreva em uma ou duas frases por que isso importa para o cliente.</p>
+          </li>
+          <li>
+            <span class="dif-num" aria-hidden="true">04</span>
+            <h3>[Diferencial 4: opcional, pode apagar]</h3>
+            <p>Descreva em uma ou duas frases por que isso importa para o cliente.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= SEÇÃO DE DESTAQUE =================
+         Troque o conteúdo por um serviço, produto, projeto ou mensagem importante. -->
+    <section class="section destaque-sec" aria-labelledby="titulo-destaque">
+      <div class="container destaque-grid">
+        <figure class="destaque-fig">
+          <!-- PERSONALIZE: imagem (800 x 700 px). Troque por <img ... loading="lazy"> -->
+          <svg class="ph" viewBox="0 0 800 700" width="800" height="700" role="img" aria-label="Espaço reservado para imagem do item em destaque">
+            <rect width="800" height="700" fill="#0B1F3A"/>
+            <rect x="60" y="60" width="680" height="580" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+            <circle cx="400" cy="300" r="130" fill="#14315C"/>
+            <rect x="100" y="540" width="100" height="20" fill="#FF5A1F"/>
+            <text x="100" y="600" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="24" font-weight="700">Imagem do destaque · 800 × 700 px</text>
+          </svg>
+        </figure>
+        <div class="destaque-texto">
+          <p class="eyebrow eyebrow-escuro">Em destaque</p>
+          <h2 id="titulo-destaque">[Serviço, produto ou projeto em destaque]</h2>
+          <p>[Explique em poucas linhas por que este item merece atenção agora e o que o cliente precisa fazer para saber mais.]</p>
+          <a class="btn btn-escuro btn-grande" href="#contato" data-whatsapp>Falar sobre este destaque</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMO FUNCIONA =================
+         SEÇÃO OPCIONAL: para remover, apague este <section> inteiro
+         e o link correspondente (se você criar um) no menu. -->
+    <section id="como-funciona" class="section">
+      <div class="container">
+        <h2>Como funciona</h2>
+        <ol class="etapas">
+          <li><h3>[Etapa 1]</h3><p>[Ex.: primeiro contato para entender o que você precisa.]</p></li>
+          <li><h3>[Etapa 2]</h3><p>[Ex.: apresentação de proposta ou combinação de horário.]</p></li>
+          <li><h3>[Etapa 3]</h3><p>[Ex.: execução do serviço ou entrega do produto.]</p></li>
+          <li><h3>[Etapa 4]</h3><p>[Ex.: acompanhamento ou finalização.]</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= PERGUNTAS FREQUENTES ================= -->
+    <section id="faq" class="section cinza">
+      <div class="container faq-grid">
+        <h2>Perguntas frequentes</h2>
+        <div class="faq-lista">
+          <details>
+            <summary>Como peço um orçamento ou agendo um atendimento?</summary>
+            <p>Pelos botões de WhatsApp desta página. A mensagem inicial é neutra, e não é preciso enviar dados pessoais para começar a conversa.</p>
+          </details>
+          <details>
+            <summary>Quais são as formas de pagamento?</summary>
+            <p>[Descrever formas de pagamento aceitas e condições, se houver.]</p>
+          </details>
+          <details>
+            <summary>Qual é o prazo para atendimento ou entrega?</summary>
+            <p>[Descrever como os prazos são combinados.]</p>
+          </details>
+          <details>
+            <summary>Vocês atendem na minha região?</summary>
+            <p>[Descrever cidades, bairros ou áreas atendidas e se há atendimento on-line.]</p>
+          </details>
+          <details>
+            <summary>Quais são os horários de funcionamento?</summary>
+            <p>[Descrever dias e horários de atendimento.]</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA FINAL ================= -->
+    <section id="contato" class="section cta-final">
+      <div class="container">
+        <div class="cta-bloco">
+          <h2>Vamos conversar sobre o que você precisa?</h2>
+          <p>Envie uma mensagem para pedir um orçamento, tirar dúvidas ou combinar um horário.</p>
+          <a class="btn btn-destaque btn-grande" href="#contato" data-whatsapp>Chamar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Aviso que aparece quando o número do WhatsApp não está configurado -->
+  <p id="aviso" class="aviso" role="status" aria-live="polite"></p>
+
+  <!-- ================= RODAPÉ =================
+       PERSONALIZE: todos os dados de contato. -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-marca">NORTE</p>
+        <p>[Descrição breve do negócio em uma ou duas frases.]</p>
+      </div>
+
+      <nav aria-label="Rodapé">
+        <h2 class="footer-titulo">Navegação</h2>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="footer-titulo">Contato</h2>
+        <ul>
+          <li>[Endereço completo]</li>
+          <li>[Telefone]</li>
+          <li>[E-mail]</li>
+          <li>[Horário de funcionamento]</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="footer-titulo">Redes sociais</h2>
+        <!-- Troque cada [Rede] por um link real, por exemplo:
+             <a href="https://..." target="_blank" rel="noopener noreferrer">Instagram (abre em nova aba)</a> -->
+        <ul>
+          <li>[Rede social 1]</li>
+          <li>[Rede social 2]</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-base">
+      <p>Modelo demonstrativo com empresa fictícia. Este site não coleta dados nem usa rastreadores.</p>
+    </div>
+  </footer>
+</body>
+</html>
